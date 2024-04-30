@@ -70,6 +70,7 @@ input {
 body {
   background: var(--body-color);
   transition: 0.33s; /* For dark Theme */
+  height: 2000px;
 }
 
 h1,
