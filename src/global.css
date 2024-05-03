@@ -96,6 +96,11 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+}
+
 button {
   border: none;
   outline: none;
