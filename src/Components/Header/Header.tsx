@@ -1,72 +1,85 @@
 import { BiGridAlt, BiX } from "react-icons/bi";
-import styles from "./Header.module.css";
 import logo from "../../assets/logo.png";
-import navLights from "../../assets/nav-light.png";
-import { useState } from "react";
+import navLight from "../../assets/nav-light.png";
+import styles from "./Header.module.css";
+import { useEffect, useState } from "react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  function toggleMenu() {
+  function handleClickMenu() {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  function closeMenu() {
-    setIsMenuOpen(false);
-  }
+  useEffect(() => {
+    const scrollHeader = () => {
+      if (window.scrollY >= 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", scrollHeader);
+
+    return () => {
+      window.removeEventListener("scroll", scrollHeader);
+    };
+  }, []);
 
   return (
-    <header className={styles.header}>
-      <nav className={`${styles.nav} container`}>
+    <header
+      className={`${styles.header} ${isScrolled ? styles.scroll_header : ""}`}
+    >
+      <nav className={styles.nav}>
         <a className={styles.nav_logo} href="#">
-          <img className={styles.nav_logo_img} src={logo} alt="" width={22} />
+          <img src={logo} alt="" />
           Christimas
         </a>
+
         <div
           className={`${styles.nav_menu} ${isMenuOpen ? styles.show_menu : ""}`}
         >
           <ul>
             <li>
-              <a onClick={closeMenu} href="#home">
+              <a onClick={handleClickMenu} href="#home">
                 Home
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#celebrate">
+              <a onClick={handleClickMenu} href="#celebrate">
                 Celebrate
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#gifts">
+              <a onClick={handleClickMenu} href="#gifts">
                 Gifts
               </a>
             </li>
             <li>
-              <a onClick={closeMenu} href="#new">
+              <a onClick={handleClickMenu} href="#new">
                 New
               </a>
             </li>
           </ul>
 
-          <div
-            onClick={toggleMenu}
-            className={`${styles.nav_close} ${
-              isMenuOpen ? styles.show_menu : ""
-            }`}
-          >
+          {/* Nav Close */}
+          <div onClick={handleClickMenu} className={styles.nav_close}>
             <BiX />
           </div>
 
           <img
-            className={styles.nav_img_menu}
-            src={navLights}
+            className={styles.nav_decoration}
             width={100}
+            src={navLight}
             alt=""
           />
         </div>
 
-        <div onClick={toggleMenu} className={styles.nav_toggle}>
-          <BiGridAlt size={20} />
+        {/* Nav Toggle */}
+        <div onClick={handleClickMenu} className={styles.nav_toggle}>
+          <BiGridAlt />
         </div>
       </nav>
     </header>
