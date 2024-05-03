@@ -12,7 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 3.5rem;
+  height: var(--header-height);
   margin: 0rem 1.5rem;
 }
 
