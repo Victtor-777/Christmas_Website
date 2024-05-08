@@ -122,8 +122,8 @@
     gap: 3rem;
   }
 }
-@media screen and (min-width: 968px) {
+/* @media screen and (min-width: 968px) {
   .nav {
     margin: 0rem auto;
   }
-}
+} */

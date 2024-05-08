@@ -58,7 +58,7 @@ export function Header() {
     <header
       className={`${styles.header} ${isScrolled ? styles.scroll_header : ""}`}
     >
-      <nav className={styles.nav}>
+      <nav className={`container ${styles.nav}`}>
         <a className={styles.nav_logo} href="#">
           <img className={styles.nav_logo_img} src={logo} alt="" />
           Christimas

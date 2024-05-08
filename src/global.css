@@ -124,6 +124,11 @@ button {
   max-width: 60.5rem;
   margin: 0 1.5rem;
 }
+@media screen and (min-width: 968px) {
+  .container {
+    margin: 0rem auto;
+  }
+}
 
 /*=============== BUTTONS ===============*/
 .button {
