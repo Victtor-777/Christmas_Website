@@ -1,12 +1,38 @@
-import { BiGridAlt, BiX } from "react-icons/bi";
+import { BiGridAlt, BiMoon, BiSun, BiX } from "react-icons/bi";
 import logo from "../../assets/logo.png";
 import navLight from "../../assets/nav-light.png";
 import styles from "./Header.module.css";
 import { useEffect, useState } from "react";
 
+function getSavedTheme() {
+  const storedTheme = localStorage.getItem("selected_theme");
+  return storedTheme === "dark";
+}
+
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+
+  useEffect(() => {
+    setIsDarkTheme(getSavedTheme());
+  }, []);
+
+  function toggleTheme() {
+    setIsDarkTheme((prevTheme) => {
+      const newTheme = !prevTheme ? "dark" : "light";
+      localStorage.setItem("selected_theme", newTheme);
+      return !prevTheme;
+    });
+  }
+
+  useEffect(() => {
+    if (isDarkTheme) {
+      document.body.classList.add("dark_theme");
+    } else {
+      document.body.classList.remove("dark_theme");
+    }
+  }, [isDarkTheme]);
 
   function handleClickMenu() {
     setIsMenuOpen(!isMenuOpen);
@@ -77,9 +103,14 @@ export function Header() {
           />
         </div>
 
-        {/* Nav Toggle */}
-        <div onClick={handleClickMenu} className={styles.nav_toggle}>
-          <BiGridAlt />
+        <div className={styles.nav_btns}>
+          <div className={styles.nav_theme_btn} onClick={toggleTheme}>
+            {isDarkTheme ? <BiSun size={20} /> : <BiMoon size={20} />}
+          </div>
+
+          <div onClick={handleClickMenu} className={styles.nav_toggle}>
+            <BiGridAlt />
+          </div>
         </div>
       </nav>
     </header>

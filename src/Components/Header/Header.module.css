@@ -29,9 +29,18 @@
 }
 
 .nav_toggle,
+.mav_btns,
+.nav_theme_btn,
 .nav_close {
   font-size: 1.25rem;
   color: var(--title-color);
+  line-height: 0;
+}
+
+.nav_btns {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 @media (max-width: 767px) {
