@@ -60,7 +60,7 @@ export function Header() {
     >
       <nav className={styles.nav}>
         <a className={styles.nav_logo} href="#">
-          <img src={logo} alt="" />
+          <img className={styles.nav_logo_img} src={logo} alt="" />
           Christimas
         </a>
 

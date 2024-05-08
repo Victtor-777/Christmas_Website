@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  max-width: 60.5rem;
   margin: 0rem 1.5rem;
 }
 
@@ -100,4 +101,29 @@
 
 .active-link {
   color: var(--first-color);
+}
+
+/* Responsive Menu */
+@media screen and (min-width: 767px) {
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+    column-gap: 3rem;
+  }
+  .nav_toggle,
+  .nav_close,
+  .nav_decoration {
+    display: none;
+  }
+  .nav_menu {
+    margin-left: auto;
+  }
+  .nav_menu ul {
+    flex-direction: row;
+    gap: 3rem;
+  }
+}
+@media screen and (min-width: 968px) {
+  .nav {
+    margin: 0rem auto;
+  }
 }
