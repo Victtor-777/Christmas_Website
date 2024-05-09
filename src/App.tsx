@@ -1,4 +1,5 @@
 // import { BaseHeader } from "./Components/Header/BaseHeader";
+import { Giving } from "./Components/Giving/Giving";
 import { Header } from "./Components/Header/Header";
 import { Home } from "./Components/Home/Home";
 import { ScrollUP } from "./Components/ScrollUp/ScrollUp";
@@ -11,6 +12,7 @@ function App() {
       <ScrollUP />
       <main>
         <Home />
+        <Giving />
       </main>
     </>
   );

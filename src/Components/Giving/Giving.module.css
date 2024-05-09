@@ -1,0 +1,44 @@
+.giving_section {
+  margin-top: 6rem;
+  display: grid;
+  justify-content: center;
+}
+
+.giving_section h2 {
+  color: var(--title-color);
+  text-align: center;
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-semi-bold);
+  margin-bottom: 3rem;
+}
+
+.giving_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.giving_item {
+  text-align: center;
+  width: 8.75rem;
+}
+
+.giving_item h3 {
+  color: var(--title-color);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-semi-bold);
+}
+
+.giving_item p {
+  color: var(--text-color);
+  font-size: var(--small-font-size);
+}
+
+@media screen and (min-width: 767px) {
+  .giving_container {
+    display: flex;
+    gap: 9rem;
+  }
+}

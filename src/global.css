@@ -79,6 +79,9 @@ body {
 
 main {
   overflow: hidden;
+  /* display: flex;
+  flex-direction: column;
+  gap: 6rem; */
 }
 
 h1,
