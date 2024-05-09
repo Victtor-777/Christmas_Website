@@ -61,7 +61,7 @@ export function Header() {
       <nav className={`container ${styles.nav}`}>
         <a className={styles.nav_logo} href="#">
           <img className={styles.nav_logo_img} src={logo} alt="" />
-          Christimas
+          Christmas
         </a>
 
         <div

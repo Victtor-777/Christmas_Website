@@ -1,10 +1,11 @@
 .home_section {
-  padding-top: 1.5rem;
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: center;
 }
 
 .home_container {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
   gap: 1.5rem;
 }
@@ -16,12 +17,12 @@
 
 .home_data {
   text-align: center;
-  width: 19.5rem;
+  max-width: 19.5rem;
 }
 
 .home_data h1 {
   color: var(--title-color);
-  font-size: var(--h1-font-size);
+  font-size: var(--biggest-font-size);
   line-height: 1.4;
   font-weight: var(--font-semi-bold);
 }
@@ -30,4 +31,24 @@
   color: var(--text-color);
   font-size: var(--small-font-size);
   margin: 0.75rem 0 2.5rem;
+}
+
+@media screen and (min-width: 767px) {
+  .home_container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3rem;
+  }
+  .home_data {
+    text-align: start;
+    max-width: 40rem;
+  }
+  .home_data p {
+    padding-right: 8rem;
+  }
+  .home_container {
+    max-width: max-content;
+  }
+  .home_container img {
+    max-width: 31.25rem;
+  }
 }
