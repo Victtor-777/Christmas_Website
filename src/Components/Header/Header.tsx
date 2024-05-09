@@ -56,7 +56,9 @@ export function Header() {
 
   return (
     <header
-      className={`${styles.header} ${isScrolled ? styles.scroll_header : ""}`}
+      className={`${styles.header} ${isScrolled ? styles.scroll_header : ""} ${
+        isDarkTheme && isScrolled ? styles.dark_scroll_header : ""
+      }`}
     >
       <nav className={`container ${styles.nav}`}>
         <a className={styles.nav_logo} href="#">
