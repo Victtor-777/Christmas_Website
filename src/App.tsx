@@ -4,6 +4,7 @@ import { Gift } from "./Components/Gift/Gift";
 import { Giving } from "./Components/Giving/Giving";
 import { Header } from "./Components/Header/Header";
 import { Home } from "./Components/Home/Home";
+import { New } from "./Components/New Gifts/New";
 import { ScrollUP } from "./Components/ScrollUp/ScrollUp";
 import "./global.css";
 
@@ -17,6 +18,7 @@ function App() {
         <Giving />
         <Celebrate />
         <Gift />
+        <New />
       </main>
     </>
   );

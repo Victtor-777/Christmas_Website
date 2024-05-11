@@ -1,0 +1,45 @@
+.new_container {
+  display: grid;
+  justify-content: center;
+}
+
+.new_card {
+  display: grid;
+  justify-content: center;
+  position: relative;
+  width: 230px;
+  background-color: var(--container-color);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1rem 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.new_overlay {
+  width: 250px;
+  height: 250px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -5rem;
+  left: -0.65rem;
+  z-index: 0;
+}
+
+.new_card img {
+  position: relative;
+  width: 150px;
+  margin-bottom: 2rem;
+  transition: 0.33s;
+}
+
+.new_card button {
+  display: flex;
+  padding: 0.5rem;
+  border-radius: 0.25rem 0.25rem 0.75rem 0.25rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
