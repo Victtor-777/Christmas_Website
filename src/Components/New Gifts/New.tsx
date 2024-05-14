@@ -5,14 +5,30 @@ import new2 from "../../assets/new2.png";
 import new3 from "../../assets/new3.png";
 import new4 from "../../assets/new4.png";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+
 export function New() {
   return (
     <section className={`container ${styles.new_section}`}>
       <h2>New Gifts</h2>
 
       <div className={styles.new_container}>
-        <div>
-          <div>
+        <Swiper
+          centeredSlides={true}
+          spaceBetween={8}
+          slidesPerView={"auto"}
+          modules={[Pagination]}
+          pagination={{
+            dynamicBullets: true,
+          }}
+          loop
+          className="mySwiper"
+        >
+          <SwiperSlide>
             <article className={styles.new_card}>
               <div className={styles.new_overlay}></div>
 
@@ -23,7 +39,9 @@ export function New() {
                 <BiHeart />
               </button>
             </article>
+          </SwiperSlide>
 
+          <SwiperSlide>
             <article className={styles.new_card}>
               <div className={styles.new_overlay}></div>
 
@@ -34,7 +52,9 @@ export function New() {
                 <BiHeart />
               </button>
             </article>
+          </SwiperSlide>
 
+          <SwiperSlide>
             <article className={styles.new_card}>
               <div className={styles.new_overlay}></div>
 
@@ -45,7 +65,9 @@ export function New() {
                 <BiHeart />
               </button>
             </article>
+          </SwiperSlide>
 
+          <SwiperSlide>
             <article className={styles.new_card}>
               <div className={styles.new_overlay}></div>
 
@@ -56,8 +78,8 @@ export function New() {
                 <BiHeart />
               </button>
             </article>
-          </div>
-        </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
     </section>
   );
