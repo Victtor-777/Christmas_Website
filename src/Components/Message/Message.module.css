@@ -1,0 +1,74 @@
+.message_container {
+  background-color: var(--first-color);
+  padding: 2.5rem 1.5rem 2.5rem;
+  border-radius: 1.25rem;
+  gap: 3rem;
+  max-width: 60.5rem;
+  margin: 0 1.5rem;
+}
+
+.message_container form {
+  text-align: center;
+}
+
+.message_container h2 {
+  font-size: var(--h2-font-size);
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.message_container input {
+  width: 100%;
+  background: #fff;
+  color: var(--text-color);
+  padding: 1rem 1.5rem;
+  border-radius: 3rem;
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.message_container button {
+  background-color: #282525;
+  width: 100%;
+}
+
+.message_container img {
+  width: 200px;
+  justify-self: center;
+  transform: rotate(15deg);
+}
+
+.message__container {
+  padding: 3.5rem 0;
+  grid-template-columns: repeat(2, max-content);
+  column-gap: 4rem;
+  justify-content: center;
+}
+
+@media screen and (min-width: 767px) {
+  .message_container {
+    padding: 3.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 4rem;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .message_container form {
+    text-align: initial;
+  }
+  .message_container h2 {
+    font-size: var(--h1-font-size);
+  }
+  .message_container input {
+    display: block;
+    width: 280px;
+  }
+  .message_container button {
+    width: initial;
+  }
+  .message_container img {
+    width: 320px;
+  }
+}
