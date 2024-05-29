@@ -21,6 +21,10 @@
   overflow: hidden;
 }
 
+.new_card span {
+  color: var(--text-color);
+}
+
 .new_overlay {
   width: 250px;
   height: 250px;
